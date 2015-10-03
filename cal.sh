@@ -102,7 +102,7 @@ if [ $newer -eq 1 ]; then
     cal $month $year |
       awk '
         $1 >= 1 && $1 <= 31 {
-          for (i = 0; i < NF; i++)
+          for (i = 1; i <= NF; i++)
             if (match ($i, /^'"$day"'$/))
               sub(/'"$day"'/, "'"${d_color}&${m_color}"'");
           sub(/ {3,}/, "  ");
